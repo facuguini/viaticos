@@ -1,0 +1,45 @@
+<ion-view title="Main">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-plus" ng-click="cNuevo()"></button>
+  </ion-nav-buttons>
+      <div class="bar bar-subheader">
+<!--   <div class="row"> 
+    <div class="col col-25">-->
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="filtro.descripcion">
+      </label>
+<!--    </div>
+    <div class="col col-75"> -->
+<!--       <label class="item item-input">
+        <input type="month" ng-model="filtro.mes">
+      </label>
+    </div> -->
+<!--     </div>-->
+  </div> 
+  <ion-content class="has-header has-subheader">
+
+    <ion-list>
+      <ion-item ng-repeat="item in items | filter:filtro.descripcion track by $index " ng-click="edicion($index, item.descripcion,item.fecha,item.combustible,item.peaje,item.estacionamiento, item.kilometros)">
+        <div class="row">
+          <div class="col col-75">
+            <span>{{item.descripcion}}</span>
+            <h5>Combustible: ${{item.combustible}}</h5>
+            <h5>Peaje: ${{item.peaje}}</h5>
+            <h5>Estacionamiento: ${{item.estacionamiento}}</h5>
+          </div>
+          <div class="col col-25">
+            <span>{{item.fecha}}</span>
+            <br>
+            <br>
+            <span><b>Total<b>: ${{item.total}}</span>
+          </div>
+          <!-- <p>Kilometros: {{item.kilometros}} km -> ${{(item.kilometros/item.lpk)*item.ppl}}</p>    Sacar Cuenta  -->
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-modal-view title="Editar">
+    <ion-header-bar>
+      <h1 class="title positive">Editar</h1>
+      <div class="buttons">
+        <button class="button button-stable" ng-click="editar.hide()">Cancelar</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <form ng-submit="">
+        <span ng-show="false" ng-model="editar.eId"></span>
+        <label class="item item-input">
+          <span class="input-label">Descripción</span>
+          <input type="text" ng-model="editar.eDescripcion">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Fecha</span>
+          <input type="date" ng-model="editar.eFecha">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Combustible</span>
+          <input type="number" ng-model="editar.eCombustible">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Peaje</span>
+          <input type="number" ng-model="editar.ePeaje">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Estacionamiento</span>
+          <input type="number" ng-model="editar.eEstacionamiento">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Kilometros</span>
+          <input type="number" ng-model="editar.eKilometros">
+        </label>
+      </form>
+      <button class="button button-positive" ng-click="guardar(editar.eId, editar.eDescripcion, editar.eFecha, editar.eCombustible, editar.ePeaje, editar.eEstacionamiento, editar.eKilometros)">Guardar</button>
+      <button class="button button-assertive" ng-click="eliminar(editar.eId)">Eliminar</button>
+    </ion-content>
+  </ion-modal-view>

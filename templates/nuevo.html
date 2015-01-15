@@ -1,0 +1,37 @@
+<ion-modal-view title="Nuevo">
+    <ion-header-bar>
+      <h1 class="title positive">Nuevo</h1>
+      <div class="buttons">
+        <button class="button button-stable" ng-click="nuevo.hide()">Cancelar</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <form ng-submit="nuevo()">
+        <label class="item item-input">
+          <span class="input-label">Descripción</span>
+          <input type="text" ng-model="nuevo.nDescripcion" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Fecha</span>
+          <input type="date" ng-model="nuevo.nFecha" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Combustible</span>
+          <input type="number" ng-model="nuevo.nCombustible">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Peaje</span>
+          <input type="number" ng-model="nuevo.nPeaje">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Estacionamiento</span>
+          <input type="number" ng-model="nuevo.nEstacionamiento">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Kilometros</span>
+          <input type="number" ng-model="nuevo.nKilometros">
+        </label>
+      </form>
+      <button class="button button-positive" ng-click="crear(nuevo.nDescripcion, nuevo.nFecha, nuevo.nCombustible, nuevo.nPeaje, nuevo.nEstacionamiento, nuevo.nKilometros)">Crear</button>
+    </ion-content>
+  </ion-modal-view>

@@ -1,0 +1,41 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar-header bar-positive">
+      <ion-nav-back-button class="button-clear">
+        <i class="icon ion-ios7-arrow-back"></i> Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+      <ion-list>
+        <div class="item item-divider item-assertive">
+          Navegador
+        </div>
+        <ion-item nav-clear menu-close href="#/app/main">
+          Main
+        </ion-item>
+        <div class="item item-divider item-assertive">
+          Settings
+        </div>
+        <ion-item>
+          <label for="ppl">Precio por litro de nafta</label>
+            <label class="item item-input"> 
+              <i class="icon ion-social-usd placeholder-icon"></i>
+              <input type="number" name="ppl" placeholder="Precio por litro" ng-model="config.ppl" ng-change="ppl(config.ppl)" step="0.01">
+            </label>
+        </ion-item>
+        <ion-item>
+          <label for="lpk">Litros por Km</label>
+          <label class="item item-input">   
+            <i class="icon ion-speedometer placeholder-icon"></i>
+            <input type="number" name="lpk" placeholder="Litros por Km" ng-model="config.lpk" ng-change="lpk(config.lpk)" step="0.1">
+          </label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
